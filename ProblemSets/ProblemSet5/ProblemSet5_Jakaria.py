@@ -1,4 +1,5 @@
 
+
 #import relevant packages
 import pandas as pd
 import numpy as np
@@ -13,14 +14,8 @@ data=pd.read_csv(r'C:\Users\mohammad.jakaria\OneDrive - University of South Caro
 data.describe()
 
 
-# convert price in millions of dollar  
-###data['price_million'] = data['price']/1000000
 
-# convert population in millions of numbers 
-###data['population_target_million'] = data['population_target']/1000000
-
-
-# scalling the price and the population as thousands
+# scalling the price and the population as millions
 data['price'] = data['price'] / 1000000
 data['population_target'] = data['population_target'] / 1000000
 
@@ -100,6 +95,3 @@ bounds2 = [(-.5,.5),(-.5,.5),(-.5,.5),(-.5,.5)]
 results2 = differential_evolution(score2, bounds2)
 print('Model 2 results')
 print(results2.x)
-
-    
-    
